@@ -4,7 +4,7 @@ function out = ssim_local_3x3_avg_gt3(A, B)
 % average over *valid* cells only, and results are returned only when the
 % number of valid cells in the window is > 3 (strictly greater).
 %
-% Constants: k1=0.01, k2=0.02, c1=(k1*R)^2, c2=(k2*R)^2, c3=c2/2.
+% Constants: k1=0.01, k2=0.03, c1=(k1*R)^2, c2=(k2*R)^2, c3=c2/2.
 
 A = double(A); B = double(B);
 maskA  = isfinite(A);
@@ -51,7 +51,7 @@ if isempty(R) || ~isfinite(R) || R <= 0
     R = 1;
 end
 
-k1 = 0.01; k2 = 0.02;
+k1 = 0.01; k2 = 0.03;
 c1 = (k1*R)^2;
 c2 = (k2*R)^2;
 c3 = c2/2;
