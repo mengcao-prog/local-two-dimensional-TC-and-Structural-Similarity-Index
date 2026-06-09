@@ -21,7 +21,7 @@ function out = tc_temporalTC_with_localCov_3x3(X3, Y3, Z3, varargin)
 %
 % Name-Value options
 %   'Win'            : 3 (odd)  - local window size for spatial covariances
-%   'KminSpatial'    : 2        - min joint-valid samples inside window (each time)
+%   'KminSpatial'    : 3        - min joint-valid samples inside window (each time)
 %   'MinSamplesTime' : 30       - min triple-overlap timesteps per pixel
 %   'Eps'            : 1e-12    - small positive floor
 %   'SpaceMask'      : []       - MxN logical study-area mask (1=in)
@@ -45,7 +45,7 @@ function out = tc_temporalTC_with_localCov_3x3(X3, Y3, Z3, varargin)
 % -------- options
 p = inputParser;
 p.addParameter('Win', 3, @(x)isscalar(x)&&mod(x,2)==1);
-p.addParameter('KminSpatial', 2, @(x)isscalar(x)&&x>=1);
+p.addParameter('KminSpatial', 3, @(x)isscalar(x)&&x>=1);
 p.addParameter('MinSamplesTime', 30, @(x)isscalar(x)&&x>=3);
 p.addParameter('Eps', 1e-12, @(x)isscalar(x)&&x>0);
 p.addParameter('SpaceMask', [], @(x)islogical(x)||isempty(x));
