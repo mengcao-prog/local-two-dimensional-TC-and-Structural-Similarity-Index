@@ -1,14 +1,13 @@
 function out = tc_temporalTC_with_localCov_3x3(X3, Y3, Z3, varargin)
 
-% TC_2D_local using temporal anomaly normalization
+% TC_2D_local 
 % X3, Y3, Z3 are first normalized independently at each pixel:
 %     Xn = (X - mean(X)) / std(X)
 %     Yn = (Y - mean(Y)) / std(Y)
 %     Zn = (Z - mean(Z)) / std(Z)
 %
 % TC errors and local spatial covariances are calculated using normalized
-% anomaly fields. The final merged product is therefore also in normalized
-% anomaly units, not raw soil moisture units.
+% anomaly fields. The final merged product is then taking X as the reference.
 
 % -------- options
 p = inputParser;
